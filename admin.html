@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>SAVITAS - Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+    SAVITAS
+</div>
+
+        <div>
+            Admin
+        </div>
+
+    </nav>
+
+    <main id="admin-page">
+
+        <div id="login-section">
+
+            <h1>Admin Login</h1>
+
+            <p>
+                Sign in to manage customer bookings.
+            </p>
+
+            <form id="login-form">
+
+                <input
+                    type="email"
+                    id="admin-email"
+                    placeholder="Admin Email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="admin-password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="login-error"></p>
+
+        </div>
+
+        <div id="appointments-section" style="display: none;">
+
+            <h1>Appointments</h1>
+
+            <p>
+                Manage your customer bookings.
+            </p>
+            <p>
+    Manage your customer bookings.
+</p>
+
+<div class="booking-filters">
+
+    <button class="filter-button active" data-status="all">
+        All
+    </button>
+
+    <button class="filter-button" data-status="pending">
+        Pending
+    </button>
+
+    <button class="filter-button" data-status="confirmed">
+        Confirmed
+    </button>
+
+    <button class="filter-button" data-status="cancelled">
+        Cancelled
+    </button>
+
+</div>
+
+<div id="appointments-container">
+
+            <div id="appointments-container">
+
+                <p>Loading appointments...</p>
+
+            </div>
+
+            <button id="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
