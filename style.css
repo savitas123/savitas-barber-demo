@@ -11,6 +11,14 @@ h1 {
     font-size: 40px;
     text-align: center;
 }
+
+#home h1 {
+    font-size: 52px;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
 p {
     text-align: center;
     font-size: 18px;
@@ -22,6 +30,7 @@ p {
     color: white;
     border: 2px solid var(--gold);
     border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -84,10 +93,18 @@ nav {
 #services h2 {
     text-align: center;
     font-size: 32px;
+    margin-bottom: 12px;
+}
+
+#services > p {
+    text-align: center;
+    color: #d1d5db;
     margin-bottom: 40px;
 }
 
 .services-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -99,10 +116,16 @@ nav {
     padding: 25px;
     border-radius: 12px;
     width: 250px;
+    min-height: 220px;
+    box-sizing: border-box;
     text-align: center;
     border: 1px solid var(--gold);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
 .service-card h3 {
     color: white;
     font-size: 22px;
@@ -113,6 +136,14 @@ nav {
     color: #d1d5db;
     line-height: 1.6;
 }
+
+.service-card p:last-child {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
 .service-card:hover {
     transform: translateY(-5px);
 }
@@ -222,12 +253,14 @@ form button {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
 }
 
 .style-card {
-    flex: 1;
+    flex: 1 1 280px;
+    max-width: 310px;
     background-color: var(--card);
     border: 1px solid var(--gold);
     border-radius: 12px;
@@ -269,8 +302,11 @@ form button {
     background-color: var(--card);
     border: 1px solid var(--gold);
     border-radius: 12px;
-   
-    .location-button {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.location-button {
     display: inline-block;
     margin-top: 10px;
     padding: 12px 22px;
@@ -285,7 +321,7 @@ form button {
 .location-button:hover {
     transform: translateY(-3px);
     opacity: 0.9;
-}
+
 }
 .style-button {
     display: inline-block;
@@ -343,7 +379,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--gold);
+    color: var(--gold); 
 }
 
 .copyright {
@@ -401,9 +437,11 @@ footer {
         .main-title {
         font-size: 36px;
     }
-        .style-gallery {
-        flex-direction: column;
-        max-width: 500px;
+    
+    .service-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
 }
@@ -570,3 +608,67 @@ footer {
 .about-text p {
     color: white;
 }
+.selected-style-display {
+    color: var(--gold);
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+.hidden-style {
+    display: none;
+}
+
+.see-more-styles {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .style-gallery {
+        max-width: 700px;
+    }
+
+    .style-card {
+        flex: 1 1 300px;
+        max-width: 320px;
+    }
+
+}
+.whatsapp-contact {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.whatsapp-contact p {
+    margin-bottom: 10px;
+    color: #d1d5db;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #25D366;
+    border-radius: 8px;
+    color: #25D366;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #25D366;
+    color: #111;
+}
+.hero-text {
+    max-width: 600px;
+    margin: 15px auto 25px;
+    line-height: 1.6;
+    color: var(--gold);
+        }
