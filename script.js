@@ -45,23 +45,25 @@ contactForm.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const style = document.getElementById("selected-style").value;
-    const appointmentDate = document.getElementById("appointment-date").value;
+const email = document.getElementById("email").value;
+const service = document.getElementById("selected-service").value;
+const style = document.getElementById("selected-style").value;
+const appointmentDate = document.getElementById("appointment-date").value;
     const appointmentTime = document.getElementById("appointment-time").value;
     const message = document.getElementById("message").value;
 
     const { data, error } = await supabaseClient
         .from("bookings")
         .insert([
-            {
-                name: name,
-                email: email,
-                style: style,
-                appointment_date: appointmentDate,
-                appointment_time: appointmentTime,
-                message: message
-            }
+           {
+    name: name,
+    email: email,
+    service: service,
+    style: style,
+    appointment_date: appointmentDate,
+    appointment_time: appointmentTime,
+    message: message
+}
         ]);
 
     if (error) {
@@ -85,6 +87,8 @@ contactForm.addEventListener("submit", async function(event) {
 
 const styleButtons = document.querySelectorAll(".style-button");
 const styleSelect = document.getElementById("selected-style");
+const selectedStyleDisplay =
+    document.getElementById("selected-style-display");
 
 styleButtons.forEach(function(button) {
 
@@ -96,6 +100,9 @@ styleButtons.forEach(function(button) {
             .textContent;
 
         styleSelect.value = selectedStyle;
+
+        selectedStyleDisplay.textContent =
+            `Selected Style: ${selectedStyle} ✓`;
 
     });
 
@@ -112,6 +119,42 @@ menuToggle.addEventListener("click", function() {
         menuToggle.textContent = "✕";
     } else {
         menuToggle.textContent = "☰";
+    }
+
+});
+
+const seeMoreButton =
+    document.getElementById("see-more-styles");
+
+const hiddenStyles =
+    document.querySelectorAll(".hidden-style");
+
+let stylesExpanded = false;
+
+seeMoreButton.addEventListener("click", function() {
+
+    stylesExpanded = !stylesExpanded;
+
+    hiddenStyles.forEach(function(style) {
+
+        if (stylesExpanded) {
+            style.style.display = "block";
+        } else {
+            style.style.display = "none";
+        }
+
+    });
+
+    if (stylesExpanded) {
+
+        seeMoreButton.textContent =
+            "See Less Styles";
+
+    } else {
+
+        seeMoreButton.textContent =
+            "See More Styles";
+
     }
 
 });
