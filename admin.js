@@ -155,9 +155,11 @@ async function loadAppointments() {
 
             <p>Email: ${booking.email}</p>
 
-            <p>Style: ${booking.style}</p>
+<p>Service: ${booking.service || "Not specified"}</p>
 
-            <p>Date: ${booking.appointment_date}</p>
+<p>Style: ${booking.style}</p>
+
+<p>Date: ${booking.appointment_date}</p>
 
             <p>Time: ${booking.appointment_time}</p>
 
